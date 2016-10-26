@@ -1,1 +1,1 @@
-include ':app', ':jnet'
+include ':app', ':jnet', ':jwidget', ':jlog'
