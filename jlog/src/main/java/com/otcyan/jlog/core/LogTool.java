@@ -7,6 +7,7 @@ import static com.otcyan.jlog.core.LogLevel.DEBUG;
 import static com.otcyan.jlog.core.LogLevel.ERROR;
 import static com.otcyan.jlog.core.LogLevel.INFO;
 import static com.otcyan.jlog.core.LogLevel.JSON;
+import static com.otcyan.jlog.core.LogLevel.OBJ;
 import static com.otcyan.jlog.core.LogLevel.VERBOSE;
 import static com.otcyan.jlog.core.LogLevel.WARN;
 
@@ -18,6 +19,10 @@ public class LogTool {
 
     /** logcat里日志的最大长度. */
     private static final int MAX_LOG_LENGTH = 4000;
+
+    /** 控制台打印的内容格式. */
+    private final static String PRINT_CONSOLE_FORMAT = "(%1$s:%2$d)#%3$s Thread:%4$s" + System.getProperty("line.separator")
+            + "%5$s" + System.getProperty("line.separator") + " ";
 
     /**
      * 通过全限定类名来获取类名。
@@ -83,11 +88,19 @@ public class LogTool {
             case ERROR:
                 Log.e(tag, sub);
                 break;
+            case OBJ:
+                Log.e(tag,sub);
             default:
                 break;
         }
     }
 
-
+    public static String parseMessage(@NonNull String message , StackTraceElement element){
+        String methodName = element.getMethodName();
+        int lineNumber = element.getLineNumber();
+        String fileName = element.getFileName();
+        String threadName = Thread.currentThread().getName();
+        return String.format(PRINT_CONSOLE_FORMAT, fileName, lineNumber, methodName, threadName, message);
+    }
 
 }

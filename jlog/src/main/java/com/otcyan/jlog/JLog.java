@@ -3,6 +3,8 @@ package com.otcyan.jlog;
 import com.otcyan.jlog.core.LogLevel;
 import com.otcyan.jlog.core.LogTool;
 import com.otcyan.jlog.print.DefaultPrinter;
+import com.otcyan.jlog.print.JsonPrinter;
+import com.otcyan.jlog.print.ObjPrinter;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -13,72 +15,90 @@ import static android.util.Log.getStackTraceString;
  * @author snamon log对外接口.
  */
 
-public class Logger {
+public class JLog {
     /** 日志类名. */
-    private static final String LOG_CLASS_NAME = Logger.class.getName();
+    private static final String LOG_CLASS_NAME = JLog.class.getName();
     /** 日志的打印方法名. */
     private static final String LOG_PRINT_METHOD_NAME = "printLog";
 
-    private DefaultPrinter mDefaultPrinter ;
+    private static DefaultPrinter mDefaultPrinter ;
+    private static JsonPrinter mJsonPrinter ;
+    private static ObjPrinter mObjPrinter;
 
-    public void v(String tag, @NonNull String message) {
+    public static void v(String tag, @NonNull String message) {
         printLog(LogLevel.VERBOSE, tag, null, message);
     }
 
-    public void v(@NonNull String message) {
+    public static void v(@NonNull String message) {
         printLog(LogLevel.VERBOSE, null, null, message);
     }
 
-    public void d(String tag, @NonNull String message) {
+    public static void d(String tag, @NonNull String message) {
         printLog(LogLevel.DEBUG, tag, null, message);
     }
 
-    public void d(@NonNull String message) {
+    public static void d(@NonNull String message) {
         printLog(LogLevel.DEBUG, null, null, message);
     }
 
-    public void i(String tag, @NonNull String message) {
+    public static void i(String tag, @NonNull String message) {
         printLog(LogLevel.INFO, tag, null, message);
     }
 
-    public void i(@NonNull String message) {
+    public static void i(@NonNull String message) {
         printLog(LogLevel.INFO, null, null, message);
     }
 
-    public void w(String tag, @NonNull String message) {
+    public static void w(String tag, @NonNull String message) {
         printLog(LogLevel.WARN, tag, null, message);
     }
 
-    public void w(@NonNull String message) {
+    public static void w(@NonNull String message) {
         printLog(LogLevel.WARN, null, null, message);
     }
 
-    public void e(String tag, Throwable t, String message) {
+    public static void e(String tag, Throwable t, String message) {
         printLog(LogLevel.ERROR, tag, t, message);
     }
 
-    public void e(Throwable t, String message) {
+    public static void e(Throwable t, String message) {
         printLog(LogLevel.ERROR, null, t, message);
     }
 
-    public void e(String tag, @NonNull String message) {
+    public static void e(String tag, @NonNull String message) {
         printLog(LogLevel.ERROR, tag, null, message);
     }
 
-    public void e(@NonNull String message) {
+    public static void e(@NonNull String message) {
         printLog(LogLevel.ERROR, null, null, message);
     }
 
-    public void e(String tag, @NonNull Throwable t) {
+    public static void e(String tag, @NonNull Throwable t) {
         printLog(LogLevel.ERROR, tag, t, null);
     }
 
-    public void e(@NonNull Throwable t) {
+    public static void e(@NonNull Throwable t) {
         printLog(LogLevel.ERROR, null, t, null);
     }
 
-    private void printLog(@LogLevel String level, String tag, Throwable t, String message){
-        if (TextUtils.isEmpty(message)) {
+    public static void json(String tag, @NonNull String json) {
+        printLog(LogLevel.JSON, tag, null, json);
+    }
+
+    public static void json(@NonNull String json) {
+        printLog(LogLevel.JSON, null, null, json);
+    }
+
+    public static void obj(String tag, @NonNull Object object) {
+        printLog(LogLevel.OBJ, tag, null, object);
+    }
+
+    public static void obj(@NonNull Object object) {
+        printLog(LogLevel.OBJ, null, null, object);
+    }
+
+    private static void printLog(@LogLevel String level, String tag, Throwable t, Object message){
+        if (message == null) {
             if (t == null) {
                 return; //
             }
@@ -99,9 +119,12 @@ public class Logger {
         }
 
         if(mDefaultPrinter==null){ //考虑并发
-            synchronized (Logger.class){
-                if(mDefaultPrinter == null)
+            synchronized (JLog.class){
+                if(mDefaultPrinter == null) {
                     mDefaultPrinter = new DefaultPrinter();
+                    mJsonPrinter = new JsonPrinter();
+                    mObjPrinter = new ObjPrinter();
+                }
             }
         }
         switch (level) {
@@ -113,7 +136,10 @@ public class Logger {
                 mDefaultPrinter.printConsole(level, tag, message, element);
                 break;
             case LogLevel.JSON:
-
+                mJsonPrinter.printConsole(level, tag, message, element);
+                break;
+            case LogLevel.OBJ:
+                mObjPrinter.printConsole(level, tag, message, element);
                 break;
             default:
                 break;
@@ -124,7 +150,7 @@ public class Logger {
      * @param elements 堆栈元素
      * @return 索引位置，-1 - 不可用
      */
-    private int getStackIndex(@NonNull StackTraceElement[] elements) {
+    private static int getStackIndex(@NonNull StackTraceElement[] elements) {
         boolean isChecked = false;
         StackTraceElement element;
         for (int i = 0; i < elements.length; i++) {

@@ -16,5 +16,5 @@ public interface Printer {
      * @param message 信息
      * @param element 堆栈元素
      */
-    void printConsole(@LogLevel String level, String tag, String message, StackTraceElement element);
+    void printConsole(@LogLevel String level, String tag, Object obj, StackTraceElement element);
 }

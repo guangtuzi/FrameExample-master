@@ -2,7 +2,7 @@ package com.otcyan.jlog.print;
 
 
 import com.otcyan.jlog.core.LogLevel;
-import com.otcyan.jlog.core.LogTool;
+        import com.otcyan.jlog.core.LogTool;
 
 /**
  * 默认打印机.
@@ -10,7 +10,7 @@ import com.otcyan.jlog.core.LogTool;
 public class DefaultPrinter implements Printer {
 
     @Override
-    public void printConsole(@LogLevel String level, String tag, String message, StackTraceElement element) {
-        LogTool.log(level, tag, PrintTool.decorateMsgForConsole(message, element));
+    public void printConsole(@LogLevel String level, String tag, Object object, StackTraceElement element) {
+        LogTool.log(level, tag, LogTool.parseMessage((String) object,element));
     }
 }
