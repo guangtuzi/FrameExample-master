@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#eeeeee</color>
+
+    <color name="tab_bg_color">#2B3346</color>
+    <color name="tab_text_color">#686E79</color>
+
+    <color name="classify_welfare">#D15FEE</color>
+    <color name="classify_apk">#CD2626</color>
+    <color name="classify_ios">#EEC900</color>
+    <color name="classify_resource">#72B4B0</color>
+    <color name="classify_html">#EE6A50</color>
+    <color name="classify_recommend">#7EDAB1</color>
 </resources>
