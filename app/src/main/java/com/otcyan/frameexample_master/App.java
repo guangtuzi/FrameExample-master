@@ -15,7 +15,8 @@ public class App extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        Api.init("http://gank.io/api/data" , ProtocolType.JSON);
+        //初始化api
+        Api.init("http://gank.io/api/data/" , ProtocolType.JSON);
         Api.get().addInterceptor(new NetInterceptor());
     }
 }

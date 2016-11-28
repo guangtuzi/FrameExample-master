@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jlog/jlog.iml" filepath="$PROJECT_DIR$/jlog/jlog.iml" />
       <module fileurl="file://$PROJECT_DIR$/jnet/jnet.iml" filepath="$PROJECT_DIR$/jnet/jnet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jutil/jutil.iml" filepath="$PROJECT_DIR$/jutil/jutil.iml" />
       <module fileurl="file://$PROJECT_DIR$/jwidget/jwidget.iml" filepath="$PROJECT_DIR$/jwidget/jwidget.iml" />
     </modules>
   </component>

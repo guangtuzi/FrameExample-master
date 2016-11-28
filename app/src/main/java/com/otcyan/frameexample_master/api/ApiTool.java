@@ -1,7 +1,7 @@
 package com.otcyan.frameexample_master.api;
 
 import com.otcyan.frameexample_master.data.Constant;
-import com.otcyan.frameexample_master.ui.classify.welfare.Welfare;
+import com.otcyan.frameexample_master.bean.Welfare;
 import com.otcyan.jnet.Api;
 import com.otcyan.jnet.BaseApi;
 
@@ -24,7 +24,7 @@ public class ApiTool extends BaseApi{
 
     public Observable<List<Welfare>> acquireWelfare(int pageIndex){
         return flatResponse(Api.get().create(ApiService.class).acquireClassify(Constant.COUNT , pageIndex))
-                .compose(this.<List<Welfare>>applyDefault());
+                .compose(this.applyDefault());
     }
 
 

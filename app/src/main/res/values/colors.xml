@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#3F3F3F</color>
+    <color name="colorPrimaryDark">#3F3F3F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="white">#eeeeee</color>
+    <color name="text_light">#BEBEBE</color>
+    <color name="text_dark">#6D6D6D</color>
 
-    <color name="tab_bg_color">#2B3346</color>
-    <color name="tab_text_color">#686E79</color>
+    <color name="white">#eeeeee</color>
+    <!--<color name="tab_text_color">#686E79</color>-->
 
     <color name="classify_welfare">#D15FEE</color>
     <color name="classify_apk">#CD2626</color>

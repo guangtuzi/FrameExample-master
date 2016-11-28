@@ -5,13 +5,11 @@ import com.jakewharton.rxbinding.widget.RxRadioGroup;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import android.app.Dialog;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
@@ -31,7 +29,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     protected boolean swipeAnyWhere = true; //是否能够在任何位置滑动
 
     protected Toolbar mToolbar;
-    protected TextView mToolbarTitle;
+//    protected TextView mToolbarTitle;
     private Dialog loadingDialog;
 
     protected abstract int getLayout();
@@ -48,10 +46,10 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         ButterKnife.bind(this);
 
         // TODO: 2016/11/5 这里要考虑状态栏在不同fragment的颜色
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
-            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+//            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+//        }
 
         if (isCanSwipeBack) {
             //初始化滑动返回
@@ -129,8 +127,8 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
     private void initToolBar() {
         mToolbar = ButterKnife.findById(this, R.id.toolbar);
-        mToolbarTitle = ButterKnife.findById(this, R.id.toolbar_base_title);
-        setSupportActionBar(mToolbar);
+//        mToolbarTitle = ButterKnife.findById(this, R.id.toolbar_base_title);
+        setSupportActionBar(mToolbar);//将actionbar替换成toolbar
         ActionBar actionBar = getSupportActionBar();
         if (null != actionBar) {
             actionBar.setTitle(getTitle());
@@ -147,13 +145,13 @@ public abstract class BaseActivity extends RxAppCompatActivity {
             mToolbar.setTitle(title);
     }
 
-    /**
-     * 设置Actionbar中间标题
-     */
-    protected void setToolBarTitle(String title) {
-        if (mToolbarTitle != null)
-            mToolbarTitle.setText(title);
-    }
+//    /**
+//     * 设置Actionbar中间标题
+//     */
+//    protected void setToolBarTitle(String title) {
+//        if (mToolbarTitle != null)
+//            mToolbarTitle.setText(title);
+//    }
 
     /**
      * 隐藏Actionbar返回按钮
