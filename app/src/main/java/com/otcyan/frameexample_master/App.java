@@ -1,10 +1,10 @@
 package com.otcyan.frameexample_master;
 
+import android.app.Application;
+
 import com.otcyan.frameexample_master.api.NetInterceptor;
 import com.otcyan.jnet.Api;
 import com.otcyan.jnet.ProtocolType;
-
-import android.app.Application;
 
 /**
  * .

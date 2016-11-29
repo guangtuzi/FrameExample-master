@@ -12,7 +12,7 @@ apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 23
     buildToolsVersion "24.0.3"
 
     defaultConfig {
