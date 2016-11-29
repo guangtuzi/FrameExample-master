@@ -1,0 +1,101 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+    >
+
+        <LinearLayout android:id="@+id/welfare"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_welfare"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/welfare"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="福利"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/apk"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_apk"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/apk"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="apk"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/ios"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_ios"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/ios"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="IOS"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/resource"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_resource"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/resource"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="扩展资源"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/html"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_html"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/html"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="前端"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/recommend"
+                      style="@style/classify_item_ll"
+                      android:background="@color/classify_recommend"
+        >
+            <ImageView
+                    style="@style/classify_item_iv"
+                    android:src="@mipmap/recommend"
+            />
+            <TextView
+                    style="@style/classify_item_tv"
+                    android:text="瞎推荐"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

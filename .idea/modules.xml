@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FrameExample-master-master.iml" filepath="$PROJECT_DIR$/FrameExample-master-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jlog/jlog.iml" filepath="$PROJECT_DIR$/jlog/jlog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jnet/jnet.iml" filepath="$PROJECT_DIR$/jnet/jnet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jutil/jutil.iml" filepath="$PROJECT_DIR$/jutil/jutil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwidget/jwidget.iml" filepath="$PROJECT_DIR$/jwidget/jwidget.iml" />
+    </modules>
+  </component>
+</project>
