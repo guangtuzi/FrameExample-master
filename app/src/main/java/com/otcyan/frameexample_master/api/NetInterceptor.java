@@ -40,12 +40,11 @@ public class NetInterceptor implements Interceptor {
             if (!TextUtils.isEmpty(bodyString)) {
                 JsonParser jp = new JsonParser();
                 JsonElement je = jp.parse(bodyString);
-                JLog.e(logStr + "[response]::" + mGson.toJson(je));
+                JLog.i(logStr + "[response]::" + mGson.toJson(je));
             }
         } else {//失败
             JLog.e(logStr + "[response]::" + code + bodyString);
         }
-        Response newResponse = response.newBuilder().body(ResponseBody.create(response.body().contentType(), bodyString)).build();
-        return newResponse;
+        return response.newBuilder().body(ResponseBody.create(response.body().contentType(), bodyString)).build();
     }
 }

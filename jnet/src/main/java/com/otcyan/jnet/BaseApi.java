@@ -1,5 +1,7 @@
 package com.otcyan.jnet;
 
+import com.otcyan.jlog.JLog;
+
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -41,12 +43,14 @@ public class BaseApi {
         return resultObservable.filter(result -> result != null).flatMap(resultBase -> {
             if (resultBase.isSuccess()) {
                 T data = resultBase.getData();
+                JLog.i("从网络上获取数据成功 ： "+ data);
                 if (data != null) {
                     return Observable.just(data);
                 } else {
                     return Observable.empty();//只会调用onComplete
                 }
             } else {
+                JLog.i("从网络上获取数据失败 ： "+ resultBase.getCode());
                 return Observable.error(new APIException(resultBase.getCode(), resultBase.getErrorDesc()));
             }
         });

@@ -1,5 +1,7 @@
 package com.otcyan.jnet;
 
+import com.otcyan.jlog.JLog;
+
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.util.concurrent.TimeUnit;
@@ -40,8 +42,10 @@ public class ApiRetryFunc implements Func1<Observable<? extends Throwable>, Obse
             if (throwable instanceof ConnectException
                     || throwable instanceof TimeoutException
                     || throwable instanceof SocketTimeoutException) {
+                JLog.e("网络异常，重试");
                 return Observable.timer(mRetryInterval, TimeUnit.MILLISECONDS);
             }
+            JLog.e("网络异常，重试结束");
             return Observable.error(throwable);
         });
     }

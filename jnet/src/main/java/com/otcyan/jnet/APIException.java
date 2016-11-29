@@ -6,14 +6,20 @@ package com.otcyan.jnet;
  */
 public class APIException extends RuntimeException {
 
-//    public  int type ; //异常的类型 是登录还是修改密码
-    public  int code ;
-    public String message;
+    public  int errorCode;
+    public String errorMsg;
 
     public APIException(int code, String message) {
         super(message);
-        this.code = code;
-        this.message = message;
+        this.errorCode = code;
+        this.errorMsg = message;
     }
 
+//    @IntDef(value = {TYPE_HTTP_ERROR , TYPE_INTERFACE_ERROR})
+//    @Target(ElementType.PARAMETER)
+//    @Retention(RetentionPolicy.SOURCE)
+//    public @interface TypeFlags{
+//        int TYPE_HTTP_ERROR = 0;
+//        int TYPE_INTERFACE_ERROR = 1;
+//    }
 }

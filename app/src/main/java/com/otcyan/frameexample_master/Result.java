@@ -1,5 +1,7 @@
 package com.otcyan.frameexample_master;
 
+import com.google.gson.annotations.SerializedName;
+
 import com.otcyan.jnet.BaseResult;
 
 
@@ -10,7 +12,7 @@ import com.otcyan.jnet.BaseResult;
 public class Result<T> extends BaseResult<T>{
 
     public boolean error;
-
+    @SerializedName("results")
     public T data;
 
     @Override
