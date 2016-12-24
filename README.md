@@ -40,7 +40,7 @@ public class App extends Application{
 }
 ```
 
-### JLog说明
+### JLog
 jlog可以打印普通json，list对象，map对象，String等，也可以定位到某一行等功能。
 ### JLog使用说明
 集成JLog暴露类JLog方法说明：
@@ -58,10 +58,10 @@ JLog不需要任何初始化，直接在调用的地方使用其静态方法即�
 效果如下：
 ![JLog](http://7xvg4t.com2.z0.glb.qiniucdn.com/JLog_test.png)
 
-### JWidget说明
+### JWidget
 JWidget是控件的基本工具类。里面也包含有MVP V层与P层的基类，都是以base开头，主要是做V－Ｐ层公共方法的封装。另外也有一些常用控件类。如上拉加载更多，滑动返回等。详情看JWidget Library .
 
-### JUtil说明
+### JUtil
 JUtil主要封装一些工具Library.有以下几种。
 
 | 方法        | 说明   |
