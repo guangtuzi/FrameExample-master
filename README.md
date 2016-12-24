@@ -17,13 +17,14 @@ rxjava+mvp+retorfit+MaterialDesign
 
 ## module使用
 
-### JNet说明
+### JNet
 集成JNet暴露类Api方法说明：
-| 方法        | 说明   |
-| --------   | :-----  |
-| init(@NonNull String baseUrl1, @NonNull ProtocolType protocolType) | 此方法为必调方法，初始化api的url与协议类型(json或protobuf)。一般在Application里面初始化一次就行。 |
-| timeout(long timeout) | 连接超时(单位：MILLISECONDS)  |
-| addInterceptor(@NonNull Interceptor interceptor) | 增加一个过滤器  |
+
+ | 方法        | 说明   |
+ | --------   | :-----  |
+ | init(@NonNull String baseUrl1, @NonNull ProtocolType protocolType) | 此方法为必调方法，初始化api的url与协议类型(json或protobuf)。一般在Application里面初始化一次就行。 |
+ | timeout(long timeout) | 连接超时(单位：MILLISECONDS)  |
+ | addInterceptor(@NonNull Interceptor interceptor) | 增加一个过滤器  |
 
 ### JNet使用示例：
 ```
@@ -46,12 +47,12 @@ jlog可以打印普通json，list对象，map对象，String等，也可以定�
 JLog不需要任何初始化，直接在调用的地方使用其静态方法即可.如：
 | 方法        | 说明   |
 | -------| :-----  |
-|JLog.v(@NonNull String message)|   打印version日志信息    |
-|JLog.d(@NonNull String message)|   打印debug日志信息    |
-|JLog.w(@NonNull String message)|   打印warn日志信息    |
-|JLog.e(@NonNull String message)     |   打印error日志信息    |
-|JLog.json(@NonNull String message)   |  打印json日志信息    |
-|JLog.obj(@NonNull String message)  |   打印object(暂支持map,集合，数组)日志信息    |
+| JLog.v(@NonNull String message) |   打印version日志信息    |
+| JLog.d(@NonNull String message) |   打印debug日志信息    |
+| JLog.w(@NonNull String message) |   打印warn日志信息    |
+| JLog.e(@NonNull String message)     |   打印error日志信息    |
+| JLog.json(@NonNull String message)   |  打印json日志信息    |
+| JLog.obj(@NonNull String message)  |   打印object(暂支持map,集合，数组)日志信息    |
 
 效果如下：
 ![JLog](http://7xvg4t.com2.z0.glb.qiniucdn.com/JLog_test.png)
@@ -63,4 +64,4 @@ JWidget是控件的基本工具类。里面也包含有MVP V层与P层的基类�
 JUtil主要封装一些工具Library.有以下几种。
 | 方法        | 说明   |
 | --------   | :-----  |
-|ToastUtil| Toast的相关操作|
+| ToastUtil | Toast的相关操作|
