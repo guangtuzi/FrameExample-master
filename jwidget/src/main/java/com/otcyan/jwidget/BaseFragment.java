@@ -1,8 +1,5 @@
 package com.otcyan.jwidget;
 
-import com.jakewharton.rxbinding.view.RxView;
-import com.trello.rxlifecycle.components.support.RxFragment;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.jakewharton.rxbinding.view.RxView;
+import com.trello.rxlifecycle.components.support.RxFragment;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,7 +33,6 @@ public abstract  class BaseFragment extends RxFragment {
 
     /**
      * 获得全局的，防止使用getActivity()为空
-     * @param context
      */
     @Override
     public void onAttach(Context context) {

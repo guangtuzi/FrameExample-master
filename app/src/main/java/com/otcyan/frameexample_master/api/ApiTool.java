@@ -1,6 +1,6 @@
 package com.otcyan.frameexample_master.api;
 
-import com.otcyan.frameexample_master.data.Constant;
+import com.otcyan.frameexample_master.Constant;
 import com.otcyan.frameexample_master.bean.Welfare;
 import com.otcyan.jnet.Api;
 import com.otcyan.jnet.BaseApi;

@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
+ * @author snamon
  * 福利对象实例.
  */
 public class Welfare implements Parcelable{

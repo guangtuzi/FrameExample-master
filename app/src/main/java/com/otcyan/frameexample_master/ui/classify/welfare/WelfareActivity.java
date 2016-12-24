@@ -1,25 +1,29 @@
 package com.otcyan.frameexample_master.ui.classify.welfare;
 
-import com.otcyan.frameexample_master.R;
-import com.otcyan.frameexample_master.bean.Welfare;
-import com.otcyan.jwidget.BaseActivity;
-
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import com.otcyan.frameexample_master.R;
+import com.otcyan.frameexample_master.bean.Welfare;
+import com.otcyan.jutil.ToastUtil;
+import com.otcyan.jwidget.BaseActivity;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 
 /**
- * .
+ * @author snamon
+ * 福利界面.
  */
 
 public class WelfareActivity extends BaseActivity {
 
-    @BindView(R.id.welfare_tv)
-    public TextView tv;
+    @BindView(R.id.rv_welfare)
+    public RecyclerView mRecyclerView;
+    WelfareAdapter mWelfareAdapter;
     @Override
     protected int getLayout() {
         return R.layout.activity_welfare;
@@ -38,20 +42,20 @@ public class WelfareActivity extends BaseActivity {
         }else{
             mToolbar.setTitleTextColor(getResources().getColor(R.color.text_dark));
         }
-        mToolbar.setTitle("干货集中营");
-//        setToolBarTitle("福利");
+    mToolbar.setNavigationIcon(R.drawable.selector_toolbar_back);
 
-        Bundle bundle = getIntent().getExtras();
-        ArrayList<Welfare> welfares = bundle.getParcelableArrayList("welfares");
-        StringBuilder sb = new StringBuilder();
-        if(welfares!=null){
-            for( Welfare welfare: welfares){
-                sb.append("who:").append(welfare.who).append(" -- url : ").append(welfare.url).append("\n");
-            }
-            tv.setText(sb.toString());
-        }else{
-            tv.setText("没有数据!");
-        }
+    mToolbar.setTitle("干货集中营");
 
+    Bundle bundle = getIntent().getExtras();
+    ArrayList<Welfare> welfares = bundle.getParcelableArrayList("welfares");
+    if(welfares!=null){
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL));
+        mWelfareAdapter = new WelfareAdapter(this , welfares);
+        mRecyclerView.setAdapter(mWelfareAdapter);
+
+    }else{
+        ToastUtil.showShort("没有数据.");
     }
+
+}
 }

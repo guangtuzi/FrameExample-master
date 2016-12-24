@@ -14,7 +14,9 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowBackground">@color/colorPrimary</item>
     </style>
-    
+
+    <!--toolbar主题-->
+
     <style name="MyTablayou" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorColor">?attr/colorAccent</item>
         <item name="tabSelectedTextColor">@color/white</item>

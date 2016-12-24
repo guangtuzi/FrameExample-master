@@ -7,6 +7,7 @@ import rx.Subscriber;
 import rx.functions.Action1;
 
 /**
+ * @author snamon
  * 订阅Subscriber 统一的处理.
  */
 

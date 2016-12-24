@@ -1,4 +1,4 @@
-package com.otcyan.frameexample_master.data;
+package com.otcyan.frameexample_master;
 
 /**
  * .

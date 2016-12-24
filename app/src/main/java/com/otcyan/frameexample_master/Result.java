@@ -6,7 +6,8 @@ import com.otcyan.jnet.BaseResult;
 
 
 /**
- * .
+ *@author snamon
+ *后台返回的数据格式.
  */
 
 public class Result<T> extends BaseResult<T>{

@@ -10,7 +10,7 @@ import rx.subscriptions.CompositeSubscription;
  */
 public class BasePresenter<T extends IBaseView> implements IBasePresenter<T> {
 
-    protected  T mvpView;
+    protected  T bindView;
     protected CompositeSubscription mCompositeSubscription;
 
     /**
@@ -24,7 +24,7 @@ public class BasePresenter<T extends IBaseView> implements IBasePresenter<T> {
 
     @Override
     public void attachView(T t) {
-        this.mvpView =  t;
+        this.bindView =  t;
 
         mCompositeSubscription = new CompositeSubscription();
     }
@@ -33,6 +33,6 @@ public class BasePresenter<T extends IBaseView> implements IBasePresenter<T> {
     public void detachView() {
         mCompositeSubscription.unsubscribe();
         mCompositeSubscription.clear();
-        mvpView = null;
+        bindView = null;
     }
 }
