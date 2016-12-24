@@ -6,7 +6,7 @@
 
     <include layout="@layout/toolbar_base"/>
 
-    <android.support.v7.widget.RecyclerView
+    <com.otcyan.jwidget.LoadMoreRecyclerView
         android:id="@+id/rv_welfare"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

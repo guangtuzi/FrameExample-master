@@ -30,6 +30,10 @@ public class WelfareAdapter extends RecyclerView.Adapter<WelfareAdapter.WelfareV
         this.mContext = context;
     }
 
+    public void addWelfareList(List<Welfare> welfares){
+        mWelfares.addAll(welfares);
+    }
+
     @Override
     public WelfareViewHole onCreateViewHolder(ViewGroup parent, int viewType) {
         return new WelfareViewHole(LayoutInflater.from(mContext).inflate(R.layout.item_welfare  , null));
