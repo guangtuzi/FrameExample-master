@@ -1,18 +1,19 @@
 package com.otcyan.jlog;
 
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
+
 import com.otcyan.jlog.core.LogLevel;
 import com.otcyan.jlog.core.LogTool;
 import com.otcyan.jlog.print.DefaultPrinter;
 import com.otcyan.jlog.print.JsonPrinter;
 import com.otcyan.jlog.print.ObjPrinter;
 
-import android.support.annotation.NonNull;
-import android.text.TextUtils;
-
 import static android.util.Log.getStackTraceString;
 
 /**
- * @author snamon log对外接口.
+ * @author snamon
+ * log对外接口.
  */
 
 public class JLog {
