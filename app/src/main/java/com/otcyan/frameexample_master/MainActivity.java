@@ -1,17 +1,17 @@
 package com.otcyan.frameexample_master;
 
-import com.otcyan.frameexample_master.ui.classify.ClassifyFragment;
-import com.otcyan.frameexample_master.ui.news.NewsFragment;
-import com.otcyan.frameexample_master.ui.other.OtherFragment;
-import com.otcyan.jwidget.BaseActivity;
-import com.otcyan.jwidget.BaseFragment;
-
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.otcyan.frameexample_master.ui.classify.ClassifyFragment;
+import com.otcyan.frameexample_master.ui.news.NewsFragment;
+import com.otcyan.frameexample_master.ui.other.OtherFragment;
+import com.otcyan.jwidget.BaseActivity;
+import com.otcyan.jwidget.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +59,7 @@ public class MainActivity extends BaseActivity {
             if (tab != null)
                 tab.setCustomView(view);
         }
+
 
         mTabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
